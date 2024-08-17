@@ -66,6 +66,13 @@ function createWeaponCard(weapon) {
     }
   }
 
+  div.appendChild(
+    createWeaponProperty(
+      "rawAttackPower",
+      weapon.attackPower / WEAPON_ATTACK_MODIFIERS[currentWeaponType]
+    )
+  );
+
   return div;
 }
 
@@ -129,6 +136,7 @@ const CARD_ICONS = {
   elementPower: "/img/card-icons/element-damage-icon.png",
   elderSeal: "/img/card-icons/elderseal-icon.webp",
   phialType: "/img/card-icons/phial-type-icon.png",
+  rawAttackPower: "/img/card-icons/attack-icon.webp",
 };
 
 const CARD_LABELS = {
@@ -138,6 +146,7 @@ const CARD_LABELS = {
   elementPower: "Element",
   elderSeal: "Elder Seal",
   phialType: "Phial",
+  rawAttackPower: "True Raw",
 };
 
 const SHARPNESS_COLORS = {
@@ -165,6 +174,11 @@ const GREAT_SWORD_ICONS = {
 const WEAPON_TYPES = {
   switchaxe: SWITCH_AXE_ICONS,
   greatsword: GREAT_SWORD_ICONS,
+};
+
+const WEAPON_ATTACK_MODIFIERS = {
+  switchaxe: 3.5,
+  greatsword: 4.8,
 };
 
 const IGNORED_KEYS = ["elementType", "isElementLocked", "tree", "rarity"];

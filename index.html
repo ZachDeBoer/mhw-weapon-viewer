@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="js/script.js"></script>
+    <script src="js/controls.js"></script>
+  </head>
+
+  <body>
+    <div class="background-container"></div>
+    <div id="controls">
+      <div id="weaponSelector">
+        <h3>Weapon Selector</h2>
+        <button id="btnSwitchAxe" onclick="loadWeapons('data/switchaxe.json')">
+          <img src="img/switch-axe-icons/switch-axe-1.png" width="25" />
+          Switch Axe
+        </button>
+        <button id="btnGreatSword" onclick="loadWeapons('data/greatsword.json')">
+          <img src="img/great-sword-icons/great-sword-1.webp" width="25" />
+          Great Sword
+        </button>
+      </div>
+      <div id="filters">
+        <h3>Controls</h3>
+        <fieldset>
+          <legend>Element:</legend>
+          <input type="radio" id="rdoAllElement" name="elementtype" value="all" onclick="filter(this.name, this.value)" checked>
+          <label for="rdoAllElement"><img src="img/card-icons/element-damage-icon.png" class="icon">All</label><br>
+          <input type="radio" id="rdoFire" name="elementtype" value="Fire" onclick="filter(this.name, this.value)">
+          <label for="rdoFire"><img src="img/element-icons/fire-icon.webp" class="icon">Fire</label><br>
+          <input type="radio" id="rdoWater" name="elementtype" value="Water" onclick="filter(this.name, this.value)">
+          <label for="rdoWater"><img src="img/element-icons/water-icon.png" class="icon">Water</label><br>
+          <input type="radio" id="rdoThunder" name="elementtype" value="Thunder" onclick="filter(this.name, this.value)">
+          <label for="rdoThunder"><img src="img/element-icons/thunder-icon.webp" class="icon">Thunder</label><br>
+          <input type="radio" id="rdoIce" name="elementtype" value="Ice" onclick="filter(this.name, this.value)">
+          <label for="rdoIce"><img src="img/element-icons/ice-icon.png" class="icon">Ice</label><br>
+          <input type="radio" id="rdoDragon" name="elementtype" value="Dragon" onclick="filter(this.name, this.value)">
+          <label for="rdoDragon"><img src="img/element-icons/dragon-icon.png" class="icon">Dragon</label><br>
+          <input type="radio" id="rdoPoison" name="elementtype" value="Poison" onclick="filter(this.name, this.value)">
+          <label for="rdoPoison"><img src="img/element-icons/poison-icon.webp" class="icon">Poison</label><br>
+          <input type="radio" id="rdoParalysis" name="elementtype" value="Paralysis" onclick="filter(this.name, this.value)">
+          <label for="rdoParalysis"><img src="img/element-icons/paralysis-icon.webp" class="icon">Paralysis</label><br>
+          <input type="radio" id="rdoSleep" name="elementtype" value="Sleep" onclick="filter(this.name, this.value)">
+          <label for="rdoSleep"><img src="img/element-icons/sleep-icon.png" class="icon">Sleep</label><br>
+          <input type="radio" id="rdoBlast" name="elementtype" value="Blast" onclick="filter(this.name, this.value)">
+          <label for="rdoBlast"><img src="img/element-icons/blast-icon.png" class="icon">Blast</label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Trees</legend>
+          <input type="checkbox" id="chkIron" value="iron">
+          <label for="chkIron">Iron Proto Axe</label><br>
+          <input type="checkbox" id="chkBone" value="bone">
+          <label for="chkBone">Bone Axe</label><br>
+          <input type="checkbox" id="chkDragonbone" value="dragonbone">
+          <label for="chkDragonbone">Dragonbone Slicer</label><br>
+          <input type="checkbox" id="chkBlacksteel" value="blacksteel">
+          <label for="chkBlacksteel">Blacksteel Switch Axe</label><br>
+          <input type="checkbox" id="chkMisc" value="misc">
+          <label for="chkMisc">Miscellaneous </label><br>
+          <input type="checkbox" id="chkKulveTaroth" value="kulveTaroth">
+          <label for="chkKulveTaroth">Kulve Taroth</label><br>
+          <input type="checkbox" id="chkSafijiiva" value="safijiiva">
+          <label for="chkSafijiiva">Safi'jiiva</label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Rarity</legend>
+          <input type="radio" id="rdoRarityAll" name="rarity" value="10" onclick="filter(this.name, this.value)" checked>
+          <label for="rdoRarity10">All</label><br>
+          <input type="radio" id="rdoRarity10" name="rarity" value="10" onclick="filter(this.name, this.value)">
+          <label for="rdoRarity10">10</label><br>
+          <input type="radio" id="rdoRarity11" name="rarity" value="11" onclick="filter(this.name, this.value)">
+          <label for="rdoRarity11">11</label><br>
+          <input type="radio" id="rdoRarity12" name="rarity" value="12" onclick="filter(this.name, this.value)">
+          <label for="rdoRarity12">12</label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Element Locked</legend>
+          <input type="radio" id="rdoElementLockedAll" name="iselementlocked" value="all" onclick="filter(this.name, this.value)" checked>
+          <label for="rdoElementLockedTrue">All</label><br>
+          <input type="radio" id="rdoElementLockedTrue" name="iselementlocked" value="true" onclick="filter(this.name, this.value)">
+          <label for="rdoElementLockedTrue">True</label><br>
+          <input type="radio" id="rdoElementLockedFalse" name="iselementlocked" value="false" onclick="filter(this.name, this.value)">
+          <label for="rdoElementLockedFalse">False</label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Sort By:</legend>
+          <input type="radio" id="rdoNoSort" name="sort" value="name" onclick="sort(this.value)" checked>
+          <label for="rdoNoSort">None</label><br>
+          <input type="radio" id="rdoAttack" name="sort" value="attackPower" onclick="sort(this.value)">
+          <label for="rdoAttack">Attack</label><br>
+          <input type="radio" id="rdoElement" name="sort" value="elementPower" onclick="sort(this.value)">
+          <label for="rdoElement">Element</label><br>
+          <input type="radio" id="rdoElderSeal" name="sort" value="elderSeal" onclick="sort(this.value)">
+          <label for="rdoElderSeal">Elder Seal</label><br>
+        </fieldset>
+      </div>
+    </div>
+    <div id="weapons"></div>
+  </body>
+</html>

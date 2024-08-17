@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "GoblinHand";
+    src: url("VTCGoblinHand.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  @font-face {
+    font-family: "GoblinHand";
+    src: url("VTCGoblinHandItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+  
+  @font-face {
+    font-family: "GoblinHand";
+    src: url("VTCGoblinHandBold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    font-family: "GoblinHand";
+}
+
+body {
+    /*animation: fadeBackground 10s infinite; */
+    /*background-image: url('../img/backgrounds/zorah-magdaros.webp');*/
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    color: white;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeBackground 60s infinite
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); 
+    z-index: -1;
+}
+
+@keyframes fadeBackground {
+    0% {
+        background-image: url('../img/backgrounds/nergigante.png');
+        opacity: 1;
+    }
+    10% {
+        background-image: url('../img/backgrounds/nergigante.png');
+        opacity: 1;
+    }
+    15% {
+        background-image: url('../img/backgrounds/kushala-daora.png');
+        opacity: 1;
+    }
+    25% {
+        background-image: url('../img/backgrounds/kushala-daora.png');
+        opacity: 1;
+    }
+    30% {
+        background-image: url('../img/backgrounds/teostra.webp');
+        opacity: 1;
+    }
+    40% {
+        background-image: url('../img/backgrounds/teostra.webp');
+        opacity: 1;
+    }
+    45% {
+        background-image: url('../img/backgrounds/vaal-hazak.jpg');
+        opacity: 1;
+    }
+    55% {
+        background-image: url('../img/backgrounds/vaal-hazak.jpg');
+        opacity: 1;
+    }
+    60% {
+        background-image: url('../img/backgrounds/xeno-jiiva.jpg');
+        opacity: 1;
+    }
+    70% {
+        background-image: url('../img/backgrounds/xeno-jiiva.jpg');
+        opacity: 1;
+    }
+    75% {
+        background-image: url('../img/backgrounds/zorah-magdaros.jpg');
+        opacity: 1;
+    }
+    85% {
+        background-image: url('../img/backgrounds/zorah-magdaros.jpg');
+        opacity: 1;
+    }
+    90% {
+        background-image: url('../img/backgrounds/nergigante.png');
+        opacity: 1;
+    }
+    100% {
+        background-image: url('../img/backgrounds/nergigante.png');
+        opacity: 1;
+    }
+}
+
+fieldset {
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.weaponCard {
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    max-width: 275px;
+    min-width: 275px;
+    float: left;
+}
+
+p.weaponName {
+    font-weight: bold;
+    text-align: center;
+}
+
+span.weaponValue {
+    float: right;
+}
+
+span.weaponValue.sharpness {
+    width: 50px;
+    height: 10px;
+    border-start-end-radius: 90%;
+}
+
+.lockedElement {
+    color: gray;
+}
+
+img.icon {
+    width: 25px;
+    margin-bottom: -5px;
+    margin-top: -5px;
+    margin-right: 2px;
+}
+
+#controls div {
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+#weaponSelector button {
+    display: inline-flex;
+    align-items: center;
+    width: 160px;
+}
+
+#weaponSelector button img {
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none
+}

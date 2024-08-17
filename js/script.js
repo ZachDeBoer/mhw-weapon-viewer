@@ -66,12 +66,14 @@ function createWeaponCard(weapon) {
     }
   }
 
-  div.appendChild(
-    createWeaponProperty(
-      "rawAttackPower",
-      weapon.attackPower / WEAPON_ATTACK_MODIFIERS[currentWeaponType]
-    )
+  let raw = weapon.attackPower / WEAPON_ATTACK_MODIFIERS[currentWeaponType];
+  div.appendChild(createWeaponProperty("rawAttackPower", raw));
+
+  let effectiveRaw = Math.round(
+    (raw * (1 - weapon.affinity / 100) + raw * 1.25 * (weapon.affinity / 100)) *
+      SHARPNESS_RAW_MULTIPLIER[weapon.sharpness]
   );
+  div.appendChild(createWeaponProperty("effectiveRaw", effectiveRaw));
 
   return div;
 }
@@ -137,6 +139,7 @@ const CARD_ICONS = {
   elderSeal: "img/card-icons/elderseal-icon.webp",
   phialType: "img/card-icons/phial-type-icon.png",
   rawAttackPower: "img/card-icons/attack-icon.webp",
+  effectiveRaw: "img/card-icons/attack-icon.webp",
 };
 
 const CARD_LABELS = {
@@ -147,6 +150,7 @@ const CARD_LABELS = {
   elderSeal: "Elder Seal",
   phialType: "Phial",
   rawAttackPower: "True Raw",
+  effectiveRaw: "Effective Raw",
 };
 
 const SHARPNESS_COLORS = {
@@ -157,6 +161,16 @@ const SHARPNESS_COLORS = {
   5: "#0D47A1",
   6: "#FFFFFF",
   7: "#9933CC",
+};
+
+const SHARPNESS_RAW_MULTIPLIER = {
+  1: 0.5,
+  2: 0.75,
+  3: 1,
+  4: 1.05,
+  5: 1.2,
+  6: 1.32,
+  7: 1.39,
 };
 
 const SWITCH_AXE_ICONS = {

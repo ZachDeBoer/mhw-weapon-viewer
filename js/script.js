@@ -111,24 +111,24 @@ const ELDER_SEAL = {
 };
 
 const ELEMENT_ICONS = {
-  Blast: "../img/element-icons/blast-icon.png",
-  Dragon: "../img/element-icons/dragon-icon.png",
-  Fire: "../img/element-icons/fire-icon.webp",
-  Ice: "../img/element-icons/ice-icon.png",
-  Paralysis: "../img/element-icons/paralysis-icon.webp",
-  Poison: "../img/element-icons/poison-icon.webp",
-  Sleep: "../img/element-icons/sleep-icon.png",
-  Thunder: "../img/element-icons/thunder-icon.webp",
-  Water: "../img/element-icons/water-icon.png",
+  Blast: "/img/element-icons/blast-icon.png",
+  Dragon: "/img/element-icons/dragon-icon.png",
+  Fire: "/img/element-icons/fire-icon.webp",
+  Ice: "/img/element-icons/ice-icon.png",
+  Paralysis: "/img/element-icons/paralysis-icon.webp",
+  Poison: "/img/element-icons/poison-icon.webp",
+  Sleep: "/img/element-icons/sleep-icon.png",
+  Thunder: "/img/element-icons/thunder-icon.webp",
+  Water: "/img/element-icons/water-icon.png",
 };
 
 const CARD_ICONS = {
-  attackPower: "../img/card-icons/attack-icon.webp",
-  sharpness: "../img/card-icons/sharpness-icon.webp",
-  affinity: "../img/card-icons/affinity-icon.png",
-  elementPower: "../img/card-icons/element-damage-icon.png",
-  elderSeal: "../img/card-icons/elderseal-icon.webp",
-  phialType: "../img/card-icons/phial-type-icon.png",
+  attackPower: "/img/card-icons/attack-icon.webp",
+  sharpness: "/img/card-icons/sharpness-icon.webp",
+  affinity: "/img/card-icons/affinity-icon.png",
+  elementPower: "/img/card-icons/element-damage-icon.png",
+  elderSeal: "/img/card-icons/elderseal-icon.webp",
+  phialType: "/img/card-icons/phial-type-icon.png",
 };
 
 const CARD_LABELS = {
@@ -151,15 +151,15 @@ const SHARPNESS_COLORS = {
 };
 
 const SWITCH_AXE_ICONS = {
-  10: "../img/switch-axe-icons/switch-axe-10.webp",
-  11: "../img/switch-axe-icons/switch-axe-11.webp",
-  12: "../img/switch-axe-icons/switch-axe-12.png",
+  10: "/img/switch-axe-icons/switch-axe-10.webp",
+  11: "/img/switch-axe-icons/switch-axe-11.webp",
+  12: "/img/switch-axe-icons/switch-axe-12.png",
 };
 
 const GREAT_SWORD_ICONS = {
-  10: "../img/great-sword-icons/great-sword-10.webp",
-  11: "../img/great-sword-icons/great-sword-11.webp",
-  12: "../img/great-sword-icons/great-sword-12.webp",
+  10: "/img/great-sword-icons/great-sword-10.webp",
+  11: "/img/great-sword-icons/great-sword-11.webp",
+  12: "/img/great-sword-icons/great-sword-12.webp",
 };
 
 const WEAPON_TYPES = {

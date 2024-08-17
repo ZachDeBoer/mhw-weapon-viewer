@@ -75,6 +75,11 @@ function createWeaponCard(weapon) {
   );
   div.appendChild(createWeaponProperty("effectiveRaw", effectiveRaw));
 
+  let effectiveElement = Math.round(
+    (weapon.elementPower / 10) * SHARPNESS_ELEMENT_MULTIPLIER[weapon.sharpness]
+  );
+  div.appendChild(createWeaponProperty("effectiveElement", effectiveElement));
+
   return div;
 }
 
@@ -140,6 +145,7 @@ const CARD_ICONS = {
   phialType: "img/card-icons/phial-type-icon.png",
   rawAttackPower: "img/card-icons/attack-icon.webp",
   effectiveRaw: "img/card-icons/attack-icon.webp",
+  effectiveElement: "img/card-icons/element-damage-icon.png",
 };
 
 const CARD_LABELS = {
@@ -151,6 +157,7 @@ const CARD_LABELS = {
   phialType: "Phial",
   rawAttackPower: "True Raw",
   effectiveRaw: "Effective Raw",
+  effectiveElement: "Effective Element",
 };
 
 const SHARPNESS_COLORS = {
@@ -171,6 +178,16 @@ const SHARPNESS_RAW_MULTIPLIER = {
   5: 1.2,
   6: 1.32,
   7: 1.39,
+};
+
+const SHARPNESS_ELEMENT_MULTIPLIER = {
+  1: 0.25,
+  2: 0.5,
+  3: 0.75,
+  4: 1,
+  5: 1.0625,
+  6: 1.15,
+  7: 1.25,
 };
 
 const SWITCH_AXE_ICONS = {
